@@ -7,4 +7,5 @@
     <string name="email">Почта</string>
     <string name="phone">номер телефона</string>
     <string name="next">Далее</string>
+    <string name="registration">Зарегистрироваться</string>
 </resources>

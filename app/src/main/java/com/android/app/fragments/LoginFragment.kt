@@ -26,9 +26,9 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
-        binding.registrationButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
-        }
+//        binding.registrationButton.setOnClickListener {
+//            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+//        }
 
         return binding.root
     }

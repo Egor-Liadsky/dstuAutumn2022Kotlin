@@ -25,4 +25,7 @@ class LoginViewModel @Inject constructor(private val repository: UserRepository)
         id = repository.getUserId()
     }
 
+    fun getUserid() {
+        id = repository.getUserId()
+    }
 }

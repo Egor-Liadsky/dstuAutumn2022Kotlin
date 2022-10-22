@@ -1,9 +1,11 @@
 package com.android.app.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -31,11 +33,12 @@ class LoginFragment : Fragment() {
         val email = binding.emailEditText.text.toString()
 
         binding.signInButton.setOnClickListener {
-            if (phone.isNotEmpty() && email.isNotEmpty()){
+            if (binding.phoneEditText.text.isNotEmpty() || binding.emailEditText.text.isNotEmpty()){
                 viewModel.login(phone = phone, email = email)
-//                if (viewModel.id != 0) {
-//                    TODO()
-//                }
+                viewModel.getUserid()
+                    Toast.makeText(context, viewModel.id.toString(), Toast.LENGTH_LONG).show()
+                /*if (viewModel.id!=0)*/ findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
+
             } else {
                 Snackbar.make(
                     binding.loginFragment, "Некоректные данные", Snackbar.LENGTH_SHORT
@@ -46,10 +49,6 @@ class LoginFragment : Fragment() {
 
         binding.nextTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
-        }
-
-        binding.signInButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
         }
 
         return binding.root

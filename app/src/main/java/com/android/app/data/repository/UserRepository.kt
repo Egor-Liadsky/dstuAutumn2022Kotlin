@@ -2,6 +2,8 @@ package com.android.app.data.repository
 
 import com.android.app.data.api.ApiService
 import com.android.app.data.preferences.EncryptedPreferencesStore
+import com.android.app.models.Users
+import com.android.app.models.UsersItem
 import javax.inject.Inject
 
 class UserRepository @Inject constructor(
@@ -19,6 +21,10 @@ class UserRepository @Inject constructor(
         email: String,
         phone: String
     ) = runCatching { setUserId(api.login(email, phone)) }
+
+    suspend fun allUsers(): ArrayList<UsersItem> {
+        return api.getAllUsers()
+    }
 
     fun getUserId(): Int = preferences.getSavedId()
 

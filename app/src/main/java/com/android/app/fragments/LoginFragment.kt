@@ -21,15 +21,21 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
+        val toolbarMain = view?.findViewById<Toolbar>(R.id.toolbar).apply {
+            this?.title = "Авторизация"
+        }
+        toolbarMain?.inflateMenu(R.menu.toolbar_menu)
 
         if (1 > 2){
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
-
-
         binding.nextTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+        }
+
+        binding.signInButton.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
         return binding.root

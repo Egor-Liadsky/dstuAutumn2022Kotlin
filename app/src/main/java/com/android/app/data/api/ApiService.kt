@@ -1,9 +1,6 @@
 package com.android.app.data.api
 
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -12,5 +9,11 @@ interface ApiService {
         @Query("email") email: String,
         @Query("name") name: String,
         @Query("phone") phone: String
-    )
+    ): Int
+
+    @GET("login")
+    suspend fun login(
+        @Query("email") email: String,
+        @Query("phone") phone: String
+    ): Int
 }

@@ -1,6 +1,7 @@
 package com.android.app.di
 
 import com.android.app.data.api.ApiService
+import com.android.app.data.preferences.EncryptedPreferencesStore
 import com.android.app.data.repository.TaskRepository
 import com.android.app.data.repository.UserRepository
 import dagger.Module
@@ -19,5 +20,5 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideUserRepository(apiService: ApiService): UserRepository = UserRepository(apiService)
+    fun provideUserRepository(apiService: ApiService, encryptedPreferences: EncryptedPreferencesStore): UserRepository = UserRepository(apiService, encryptedPreferences)
 }

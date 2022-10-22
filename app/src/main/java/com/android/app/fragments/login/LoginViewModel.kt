@@ -1,4 +1,4 @@
-package com.android.app.fragments.registration
+package com.android.app.fragments.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,17 +9,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RegistrationViewModel @Inject constructor(private val repository: UserRepository) :
-    ViewModel() {
+class LoginViewModel @Inject constructor(private val repository: UserRepository) : ViewModel() {
 
     var id = 0
 
-    fun register(
+    fun login(
         email: String,
-        name: String,
         phone: String
-        ) = viewModelScope.launch(Dispatchers.IO) {
-        repository.register(email, phone, name)
+    ) = viewModelScope.launch(Dispatchers.IO) {
+        repository.login(email, phone)
         id = repository.getUserId()
     }
 

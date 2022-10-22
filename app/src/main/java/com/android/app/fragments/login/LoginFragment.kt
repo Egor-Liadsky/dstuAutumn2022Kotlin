@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
+    private val viewModel: LoginViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -21,8 +25,10 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        if (1 > 2){
-            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
+        binding.signInButton.setOnClickListener {
+            viewModel.login(binding.phoneEditText.text.toString(), binding.emailEditText.text.toString())
+            if (viewModel.id!=0){
+                TODO() }
         }
 
         binding.nextTextView.setOnClickListener {
@@ -30,7 +36,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.signInButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
         return binding.root

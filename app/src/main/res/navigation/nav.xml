@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.android.app.fragments.LoginFragment"
-        android:label="fragment_login"
+        android:label="Авторизация"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.android.app.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Главная"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_tasksFragment2"
@@ -34,30 +34,51 @@
         <action
             android:id="@+id/action_homeFragment_to_hiddenTasksFragment"
             app:destination="@id/hiddenTasksFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/tasksFragment"
         android:name="com.android.app.fragments.TasksFragment"
-        android:label="fragment_tasks"
+        android:label="Задачи"
         tools:layout="@layout/fragment_tasks" />
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.android.app.fragments.NotesFragment"
-        android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" />
+        android:label="Записи"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/hotListFragment"
         android:name="com.android.app.fragments.HotListFragment"
-        android:label="fragment_hot_list"
+        android:label="Горящий лист"
         tools:layout="@layout/fragment_hot_list" />
     <fragment
         android:id="@+id/hiddenTasksFragment"
         android:name="com.android.app.fragments.HiddenTasksFragment"
-        android:label="fragment_hidden_tasks"
+        android:label="Скрытые задачи"
         tools:layout="@layout/fragment_hidden_tasks" />
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.android.app.fragments.RegistrationFragment"
-        android:label="fragment_registration"
+        android:label="Регистрация"
         tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.android.app.fragments.AddNoteFragment"
+        android:label="Добавить записку"
+        tools:layout="@layout/fragment_add_note" >
+        <action
+            android:id="@+id/action_addNoteFragment_to_notesFragment2"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.android.app.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

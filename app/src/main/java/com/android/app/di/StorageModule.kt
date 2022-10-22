@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.android.app.Constants
 import com.android.app.data.local.database.TaskRoomDatabase
+import com.android.app.data.preferences.EncryptedPreferencesStore
 import com.android.app.data.preferences.PreferencesStore
 import dagger.Module
 import dagger.Provides
@@ -32,4 +33,8 @@ object StorageModule {
     @Provides
     @Singleton
     fun provideSharedPreferences(@ApplicationContext context: Context) = PreferencesStore(context)
+
+    @Provides
+    @Singleton
+    fun provideEncryptedSharedPreferences(@ApplicationContext context: Context) = EncryptedPreferencesStore(context)
 }

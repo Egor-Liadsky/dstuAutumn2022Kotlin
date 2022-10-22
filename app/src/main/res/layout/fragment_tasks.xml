@@ -34,24 +34,6 @@
         app2:layout_constraintStart_toStartOf="@+id/blockView"
         app2:layout_constraintTop_toTopOf="@+id/blockView" />
 
-    <EditText
-        android:id="@+id/fioEditText"
-        style="@style/EditText"
-        android:layout_width="270dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Почта"
-        android:inputType="textPersonName"
-        app2:layout_constraintEnd_toEndOf="@+id/blockView"
-        app2:layout_constraintHorizontal_bias="0.48"
-        app2:layout_constraintStart_toStartOf="@+id/blockView"
-        app2:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/blockView"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="@+id/blockView"
-        app:layout_constraintTop_toBottomOf="@+id/authTextView" />
-
     <ImageButton
         android:id="@+id/nextAddTaskButton"
         android:layout_width="188dp"
@@ -62,7 +44,7 @@
         app2:layout_constraintEnd_toEndOf="@+id/blockView"
         app2:layout_constraintHorizontal_bias="0.492"
         app2:layout_constraintStart_toStartOf="@+id/blockView"
-        app2:layout_constraintTop_toBottomOf="@+id/fioEditText"
+        app2:layout_constraintTop_toBottomOf="@+id/popupButton"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
         app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
@@ -77,12 +59,28 @@
         android:textSize="20sp"
         app2:layout_constraintBottom_toBottomOf="@+id/nextAddTaskButton"
         app2:layout_constraintEnd_toEndOf="@+id/nextAddTaskButton"
+        app2:layout_constraintHorizontal_bias="0.507"
         app2:layout_constraintStart_toStartOf="@+id/nextAddTaskButton"
         app2:layout_constraintTop_toTopOf="@+id/nextAddTaskButton"
+        app2:layout_constraintVertical_bias="0.444"
         app:layout_constraintBottom_toBottomOf="@+id/nextAddTaskButton"
         app:layout_constraintEnd_toEndOf="@+id/nextAddTaskButton"
         app:layout_constraintStart_toStartOf="@+id/nextAddTaskButton"
         app:layout_constraintTop_toTopOf="@+id/nextAddTaskButton" />
+
+    <Button
+        android:id="@+id/popupButton"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="@font/qanelas"
+        android:text="@string/select_user"
+        android:textColor="@color/white"
+        app2:layout_constraintEnd_toEndOf="@+id/blockView"
+        app2:layout_constraintHorizontal_bias="0.48"
+        app2:layout_constraintStart_toStartOf="@+id/blockView"
+        app2:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

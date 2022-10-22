@@ -10,8 +10,8 @@
         android:id="@+id/blockView"
         style="@style/blockMain"
         android:layout_width="320sp"
-        android:layout_height="550sp"
-        android:layout_marginTop="50dp"
+        android:layout_height="580sp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         android:foreground="@drawable/pressedbtnnext"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
         app:layout_constraintStart_toStartOf="@+id/blockView"
-        app:layout_constraintTop_toBottomOf="@+id/endTimePlainText" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <TextView
         android:id="@+id/textView2"
@@ -110,6 +110,17 @@
         app:layout_constraintEnd_toEndOf="@+id/signInButton"
         app:layout_constraintStart_toStartOf="@+id/signInButton"
         app:layout_constraintTop_toTopOf="@+id/signInButton" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Скрыть задачу"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/endTimePlainText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

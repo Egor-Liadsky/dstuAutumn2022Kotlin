@@ -1,5 +1,6 @@
 package com.android.app.data.api
 
+import com.android.app.models.UsersModel
 import retrofit2.http.*
 
 interface ApiService {
@@ -16,4 +17,8 @@ interface ApiService {
         @Query("email") email: String,
         @Query("phone") phone: String
     ): Int
+
+//    @GET("users")
+//    suspend fun getUsers(): List<UsersModel>
+//    }
 }

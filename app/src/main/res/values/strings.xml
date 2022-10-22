@@ -10,7 +10,7 @@
     <string name="registration">Регистрация</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
-    <string name="add_note">add note</string>
+    <string name="add_note">Добавление\nзаметки</string>
     <string name="date">Дата</string>
     <string name="change_theme">Сменить тему</string>
     <string name="night">Темная</string>
@@ -18,4 +18,5 @@
     <string name="tasks">Задачи</string>
     <string name="add_task">Добавление\nзадачи</string>
     <string name="make">Создать</string>
+    <string name="select_user">Выберите пользователя</string>
 </resources>

@@ -22,7 +22,7 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         if (1 > 2){
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
         }
 
         binding.nextTextView.setOnClickListener {
@@ -30,17 +30,10 @@ class LoginFragment : Fragment() {
         }
 
         binding.signInButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
         }
 
         return binding.root
     }
 
-    fun setupToolbar(){
-        val toolbarMain = view?.findViewById<Toolbar>(R.id.toolbar)
-        (activity as AppCompatActivity).apply {
-            setSupportActionBar(toolbarMain)
-            toolbarMain?.inflateMenu(R.menu.toolbar_menu)
-        }
-    }
 }

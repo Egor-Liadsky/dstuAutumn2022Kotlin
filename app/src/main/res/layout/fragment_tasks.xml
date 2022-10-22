@@ -1,10 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-"
     tools:context=".fragments.TasksFragment">
+
+
+    <View
+        android:id="@+id/blockView"
+        style="@style/blockMain"
+        android:layout_width="320sp"
+        android:layout_height="350sp"
+        android:layout_marginTop="50dp"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/MainText"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tasks"
+        android:textSize="35sp"
+        app2:layout_constraintEnd_toEndOf="@+id/blockView"
+        app2:layout_constraintStart_toStartOf="@+id/blockView"
+        app2:layout_constraintTop_toTopOf="@+id/blockView" />
+
+    <EditText
+        android:id="@+id/fioEditText"
+        style="@style/EditText"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Почта"
+        android:inputType="textPersonName"
+        app2:layout_constraintEnd_toEndOf="@+id/blockView"
+        app2:layout_constraintHorizontal_bias="0.48"
+        app2:layout_constraintStart_toStartOf="@+id/blockView"
+        app2:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/authTextView" />
+
+    <ImageButton
+        android:id="@+id/nextAddTaskButton"
+        android:layout_width="188dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_next"
+        android:foreground="@drawable/pressedbtnnext"
+        app2:layout_constraintEnd_toEndOf="@+id/blockView"
+        app2:layout_constraintHorizontal_bias="0.492"
+        app2:layout_constraintStart_toStartOf="@+id/blockView"
+        app2:layout_constraintTop_toBottomOf="@+id/fioEditText"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/qanelas"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app2:layout_constraintBottom_toBottomOf="@+id/nextAddTaskButton"
+        app2:layout_constraintEnd_toEndOf="@+id/nextAddTaskButton"
+        app2:layout_constraintStart_toStartOf="@+id/nextAddTaskButton"
+        app2:layout_constraintTop_toTopOf="@+id/nextAddTaskButton"
+        app:layout_constraintBottom_toBottomOf="@+id/nextAddTaskButton"
+        app:layout_constraintEnd_toEndOf="@+id/nextAddTaskButton"
+        app:layout_constraintStart_toStartOf="@+id/nextAddTaskButton"
+        app:layout_constraintTop_toTopOf="@+id/nextAddTaskButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

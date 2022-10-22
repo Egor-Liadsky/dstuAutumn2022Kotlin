@@ -1,22 +1,37 @@
 package com.android.app.fragments.tasks
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.app.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.android.app.databinding.FragmentAddTaskBinding
-import com.android.app.databinding.FragmentRegistrationBinding
-import com.android.app.databinding.FragmentTasksBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class AddTaskFragment : Fragment() {
+
+    private val viewModel: AddTaskViewModel by viewModels()
     private lateinit var binding: FragmentAddTaskBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_add_task, container, false)
+        binding = FragmentAddTaskBinding.inflate(inflater, container, false)
+
+        binding.signInButton.setOnClickListener {
+            viewModel.addTask(
+                arguments?.getInt("toId"),
+                binding.titlePlainText.text.toString(),
+                binding.contentPlainText.text.toString(),
+                binding.checkBox.isChecked,
+                binding.startTimePlainText.text.toString(),
+                binding.endTimePlainText.text.toString()
+            )
+        }
+
+        return binding.root
     }
 }

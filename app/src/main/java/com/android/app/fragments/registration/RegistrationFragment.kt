@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -31,13 +29,13 @@ class RegistrationFragment : Fragment() {
         val phone = binding.phoneEditText.text.toString()
 
         binding.signUpButton.setOnClickListener {
-            if (email.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty()) {
-                viewModel.register(name = name, email = email, phone = phone)
-                findNavController().navigate(R.id.action_registrationFragment_to_tasksFragment)
-            } else {
+            if (binding.emailEditText.text.isEmpty() || binding.fioEditText.text.isEmpty() || binding.phoneEditText.text.isEmpty()) {
                 Snackbar.make(
                     binding.regFragment, "Некоректные данные", Snackbar.LENGTH_SHORT
                 ).show()
+            } else {
+                viewModel.register(name = name, email = email, phone = phone)
+                findNavController().navigate(R.id.action_registrationFragment_to_tasksFragment)
             }
         }
 

@@ -1,6 +1,6 @@
 package com.android.app.data.api
 
-import com.android.app.models.UsersModel
+import com.android.app.models.UsersItem
 import retrofit2.http.*
 
 interface ApiService {
@@ -18,7 +18,17 @@ interface ApiService {
         @Query("phone") phone: String
     ): Int
 
-//    @GET("users")
-//    suspend fun getUsers(): List<UsersModel>
-//    }
+    @POST("create_task")
+    suspend fun addTask(
+        @Query("from_id") id: Int,
+        @Query("to_id") toId: Int,
+        @Query("title") title: String,
+        @Query("text") description: String,
+        @Query("is_secret") isSecret: Boolean,
+        @Query("time_start") startDate: String,
+        @Query("time_end") endDate: String
+    )
+
+    @GET("select_all_users")
+    suspend fun getAllUsers(): ArrayList<UsersItem>
 }

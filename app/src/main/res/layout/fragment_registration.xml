@@ -11,7 +11,7 @@
         android:id="@+id/blockView"
         style="@style/blockMain"
         android:layout_width="320sp"
-        android:layout_height="500sp"
+        android:layout_height="420dp"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"

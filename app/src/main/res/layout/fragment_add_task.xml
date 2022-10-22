@@ -10,7 +10,7 @@
         android:id="@+id/blockView"
         style="@style/blockMain"
         android:layout_width="320sp"
-        android:layout_height="500sp"
+        android:layout_height="550sp"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/add_task"
+        android:gravity="center_horizontal"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
         app:layout_constraintHorizontal_bias="0.508"
@@ -44,13 +45,14 @@
         app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/authTextView" />
 
+
     <EditText
-        android:id="@+id/comtentPlainText"
+        android:id="@+id/contentPlainText"
         style="@style/EditText"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
         android:ems="10"
+        android:layout_marginTop="20dp"
         android:hint="Описание"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
@@ -58,28 +60,56 @@
         app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/titlePlainText" />
 
+    <EditText
+        android:id="@+id/startTimePlainText"
+        style="@style/EditText"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:hint="Дата начала"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/contentPlainText" />
 
-    <Button
-        android:id="@+id/dataButton"
+    <EditText
+        android:id="@+id/endTimePlainText"
+        style="@style/EditText"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:hint="Дата окончания"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/startTimePlainText" />
+
+    <ImageButton
+        android:id="@+id/signInButton"
+        android:layout_width="188dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_next"
+        android:foreground="@drawable/pressedbtnnext"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/endTimePlainText" />
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Дата"
-        app:layout_constraintEnd_toEndOf="@+id/datePicker"
-        app:layout_constraintStart_toStartOf="@+id/datePicker"
-        app:layout_constraintTop_toBottomOf="@+id/comtentPlainText" />
-
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        android:text="@string/make"
+        android:textColor="@color/white"
+        android:fontFamily="@font/qanelas"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signInButton"
+        app:layout_constraintTop_toTopOf="@+id/signInButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

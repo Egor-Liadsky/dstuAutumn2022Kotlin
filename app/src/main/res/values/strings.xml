@@ -16,5 +16,6 @@
     <string name="night">Темная</string>
     <string name="settings">Настройки</string>
     <string name="tasks">Задачи</string>
-    <string name="add_task">Добавление задачи</string>
+    <string name="add_task">Добавление\nзадачи</string>
+    <string name="make">Создать</string>
 </resources>

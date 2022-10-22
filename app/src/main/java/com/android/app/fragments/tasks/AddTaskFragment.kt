@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.android.app.R
+import com.android.app.databinding.FragmentAddNoteBinding
 import com.android.app.databinding.FragmentAddTaskBinding
 import com.android.app.databinding.FragmentRegistrationBinding
 import com.android.app.databinding.FragmentTasksBinding
@@ -16,7 +17,14 @@ class AddTaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_add_task, container, false)
+    ): View {
+        binding = FragmentAddTaskBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.dataButton
     }
 }

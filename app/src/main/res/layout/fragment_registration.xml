@@ -6,65 +6,105 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.RegistrationFragment">
 
-    <TextView
-        android:id="@+id/registrationTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:textSize="35sp"
-        android:text="@string/registration"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/fioEditText"
+    <View
+        android:layout_marginTop="40dp"
+        android:id="@+id/blockView"
+        style="@style/blockMain"
+        android:layout_width="320sp"
+        android:layout_height="500sp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/registrationTextView"
+        style="@style/MainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/registration"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toTopOf="@+id/blockView" />
+
+    <EditText
+        android:id="@+id/fioEditText"
+        style="@style/EditText"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="ФИО"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/registrationTextView" />
 
     <EditText
         android:id="@+id/phoneEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        style="@style/EditText"
         android:ems="10"
         android:hint="Номер телефона"
         android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/fioEditText" />
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        style="@style/EditText"
         android:ems="10"
         android:hint="Почта"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
         app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
 
-    <Button
+    <ImageButton
         android:id="@+id/signInButton"
+        android:layout_width="188dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_next"
+        android:foreground="@drawable/pressedbtnnext"
+        app:layout_constraintEnd_toEndOf="@+id/blockView"
+        app:layout_constraintStart_toStartOf="@+id/blockView"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
         android:text="@string/next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+        android:textColor="@color/white"
+        android:fontFamily="@font/qanelas"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signInButton"
+        app:layout_constraintTop_toTopOf="@+id/signInButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

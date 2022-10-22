@@ -10,8 +10,9 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <item name="android:statusBarColor">@color/blue_reg</item>
+        <item name="android:navigationBarColor">@color/blue_reg</item>
     </style>
 
     <style name="MainText">
@@ -39,7 +40,21 @@
     <style name="blockMain">
         <item name="android:background">@drawable/block_corners</item>
         <item name="android:backgroundTint">@color/white</item>
-        <item name="android:alpha">0.25</item>
+        <item name="android:alpha">0.20</item>
+    </style>
+
+    <!-- ACTION BAR -->
+    <style name="actionBar">
+        <item name="android:background">@color/blue_reg</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/titleStyle</item>
+
+    </style>
+
+    <style name="titleStyle">
+        <item name="android:fontFamily">@font/qanelas</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_centerHorizontal">true</item>
     </style>
 
 </resources>

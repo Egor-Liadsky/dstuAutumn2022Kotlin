@@ -20,6 +20,7 @@ class RegistrationViewModel @Inject constructor(private val repository: UserRepo
         phone: String
         ) = viewModelScope.launch(Dispatchers.IO) {
         repository.register(email, phone, name)
+        id = repository.getUserId()
     }
 
     init {

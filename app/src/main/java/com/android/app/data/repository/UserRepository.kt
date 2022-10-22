@@ -18,7 +18,7 @@ class UserRepository @Inject constructor(
     suspend fun login(
         email: String,
         phone: String
-    ) = api.login(email, phone)
+    ) = runCatching { setUserId(api.login(email, phone)) }
 
     fun getUserId(): Int = preferences.getSavedId()
 

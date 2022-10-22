@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentLoginBinding
+import com.android.app.fragments.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,7 +37,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.signInButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
         }
 
         return binding.root

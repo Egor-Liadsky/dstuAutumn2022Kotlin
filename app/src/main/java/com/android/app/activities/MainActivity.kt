@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.loginFragment,
                 R.id.notesFragment,
                 R.id.registrationFragment,
-                R.id.tasksFragment
+                R.id.tasksFragment,
+                R.id.settingsFragment
             )
         )
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -69,23 +70,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            supportFragmentManager.beginTransaction().add().co
             finish()
         }
-        if (item.itemId == R.id.settings) {
 
-            Toast.makeText(this, "TEST", Toast.LENGTH_SHORT).show()
-        }
         return super.onOptionsItemSelected(item)
     }
-
-
 }
-
-//fun onOptionsItemSelected(item: MenuItem): Boolean {
-//    return when (item.itemId) {
-//        R.id.menu_item ->             // Action goes here
-//            true
-//        else -> super.onOptionsItemSelected(item)
-//    }
-//}

@@ -12,4 +12,7 @@
     <string name="description">Description</string>
     <string name="add_note">add note</string>
     <string name="date">Дата</string>
+    <string name="change_theme">Сменить тему</string>
+    <string name="night">Темная</string>
+    <string name="settings">Настройки</string>
 </resources>

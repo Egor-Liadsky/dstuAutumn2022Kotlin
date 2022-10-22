@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.android.app.fragments.NotesFragment"
-        android:label="Записи"
+        android:label="Заметки"
         tools:layout="@layout/fragment_notes" >
         <action
             android:id="@+id/action_notesFragment_to_addNoteFragment"
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.android.app.SettingsFragment"
-        android:label="fragment_settings"
+        android:name="com.android.app.fragments.SettingsFragment"
+        android:label="Настройки"
         tools:layout="@layout/fragment_settings" />
 </navigation>

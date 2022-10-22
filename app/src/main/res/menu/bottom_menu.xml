@@ -20,4 +20,9 @@
         android:icon="@drawable/ic_tasks_foreground"
         android:title="Скрытые задачи" />
 
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Настройки"/>
+
 </menu>

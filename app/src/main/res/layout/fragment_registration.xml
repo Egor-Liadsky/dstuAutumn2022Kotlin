@@ -8,17 +8,15 @@
 
 
     <View
-        android:layout_marginTop="40dp"
         android:id="@+id/blockView"
         style="@style/blockMain"
         android:layout_width="320sp"
         android:layout_height="500sp"
-        android:layout_marginBottom="140dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/registrationTextView"

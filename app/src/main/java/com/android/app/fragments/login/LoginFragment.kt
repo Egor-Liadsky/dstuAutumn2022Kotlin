@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentLoginBinding
 import com.android.app.fragments.login.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,10 +27,21 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
+        val phone = binding.phoneEditText.text.toString()
+        val email = binding.emailEditText.text.toString()
+
         binding.signInButton.setOnClickListener {
-            viewModel.login(binding.phoneEditText.text.toString(), binding.emailEditText.text.toString())
-            if (viewModel.id!=0){
-                TODO() }
+            if (phone.isNotEmpty() && email.isNotEmpty()){
+                viewModel.login(phone = phone, email = email)
+//                if (viewModel.id != 0) {
+//                    TODO()
+//                }
+            } else {
+                Snackbar.make(
+                    binding.loginFragment, "Некоректные данные", Snackbar.LENGTH_SHORT
+                ).show()
+            }
+
         }
 
         binding.nextTextView.setOnClickListener {

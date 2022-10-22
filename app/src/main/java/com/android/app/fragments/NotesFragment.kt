@@ -24,7 +24,6 @@ class NotesFragment : Fragment() {
 
         binding = FragmentNotesBinding.inflate(inflater, container, false)
 
-        binding.noteRecyclerView.adapter = adapter
 
 
         return binding.root
@@ -41,7 +40,6 @@ class NotesFragment : Fragment() {
         data.forEach {
 //            adapter.addData(it.title, it.description, it.date)
         }
-        adapter.addData(data)
 
 //        binding.addNote.setOnClickListener {
 //            findNavController().navigate(R.id.action_notesFragment_to_addNoteFragment)

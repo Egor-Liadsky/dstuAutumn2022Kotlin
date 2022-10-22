@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.android.app.R
 import com.android.app.adapters.NoteAdapter
-import com.android.app.databinding.FragmentLoginBinding
 import com.android.app.databinding.FragmentNotesBinding
-import com.android.app.models.NoteModel
+import com.android.app.models.Note
 
 
 class NotesFragment : Fragment() {
@@ -37,8 +34,8 @@ class NotesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val data = listOf(
-            NoteModel("TEst", "first test", "10.12.2001"),
-            NoteModel("TEst2", "second test", "10.12.2006")
+            Note("TEst", "first test", "10.12.2001"),
+            Note("TEst2", "second test", "10.12.2006")
         )
 
         data.forEach {

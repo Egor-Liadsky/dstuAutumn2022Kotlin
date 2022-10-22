@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.app.databinding.ItemNoteBinding
-import com.android.app.models.NoteModel
+import com.android.app.models.Note
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteHolder>(){
 
-    private var noteList = mutableListOf<NoteModel>()
+    private var noteList = mutableListOf<Note>()
 
     class NoteHolder(private val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item: NoteModel){
+        fun bind(item: Note){
             binding.title.text = item.title
             binding.description.text = item.description
             binding.date.text = item.date
@@ -31,7 +31,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteHolder>(){
         return noteList.size
     }
 
-    fun addData(list: List<NoteModel>){
+    fun addData(list: List<Note>){
         noteList.addAll(list)
         notifyDataSetChanged()
     }

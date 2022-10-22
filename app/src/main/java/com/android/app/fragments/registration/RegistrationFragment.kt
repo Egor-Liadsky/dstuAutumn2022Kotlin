@@ -1,16 +1,18 @@
 package com.android.app.fragments.registration
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentRegistrationBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_login.*
 
 @AndroidEntryPoint
 class RegistrationFragment : Fragment() {
@@ -24,14 +26,18 @@ class RegistrationFragment : Fragment() {
     ): View? {
         binding = FragmentRegistrationBinding.inflate(inflater, container, false)
 
+        val email = binding.emailEditText.text.toString()
+        val name = binding.fioEditText.text.toString()
+        val phone = binding.phoneEditText.text.toString()
+
         binding.signUpButton.setOnClickListener {
-            viewModel.register(
-                binding.emailEditText.text.toString(),
-                binding.fioEditText.text.toString(),
-                binding.phoneEditText.text.toString()
-            )
-            binding.signUpButton.setOnClickListener {
-//                if (viewModel.id!=0) == findNavController().navigate(TODO())
+            if (email.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty()) {
+                viewModel.register(name = name, email = email, phone = phone)
+                findNavController().navigate(R.id.action_registrationFragment_to_tasksFragment)
+            } else {
+                Snackbar.make(
+                    binding.regFragment, "Некоректные данные", Snackbar.LENGTH_SHORT
+                ).show()
             }
         }
 

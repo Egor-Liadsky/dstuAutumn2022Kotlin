@@ -2,6 +2,7 @@ package com.android.app.di
 
 import com.android.app.data.api.ApiService
 import com.android.app.data.repository.TaskRepository
+import com.android.app.data.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,4 +16,8 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideTaskRepository(apiService: ApiService): TaskRepository = TaskRepository(apiService)
+
+    @Provides
+    @Singleton
+    fun provideUserRepository(apiService: ApiService): UserRepository = UserRepository(apiService)
 }

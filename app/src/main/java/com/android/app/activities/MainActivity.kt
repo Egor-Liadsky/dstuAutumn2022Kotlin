@@ -18,8 +18,9 @@ import com.android.app.R
 import com.android.app.databinding.ActivityMainBinding
 import com.android.app.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

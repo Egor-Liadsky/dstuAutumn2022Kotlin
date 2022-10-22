@@ -64,7 +64,7 @@
         tools:layout="@layout/fragment_hidden_tasks" />
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.android.app.fragments.RegistrationFragment"
+        android:name="com.android.app.fragments.registration.RegistrationFragment"
         android:label="Регистрация"
         tools:layout="@layout/fragment_registration" />
     <fragment

@@ -11,8 +11,8 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
 
-        <item name="android:statusBarColor">@color/blue_reg</item>
-        <item name="android:navigationBarColor">@color/blue_reg</item>
+        <item name="android:statusBarColor">@color/green_white</item>
+        <item name="android:navigationBarColor">@color/green_white</item>
 
         <item name="itemTextAppearanceActive">@style/fontStyle</item>
         <item name="itemTextAppearanceInactive">@style/fontStyle</item>
@@ -23,15 +23,20 @@
         <item name="android:fontFamily">@font/qanelas</item>
     </style>
 
+    <style name="imageButton">
+        <item name="android:foreground">@drawable/pressedbtnnext_night</item>
+        <item name="android:background">@drawable/btn_next_night</item>
+    </style>
+
     <!-- ActivityMain -->
     <style name="activityMain">
-        <item name="android:background">@drawable/background</item>
+        <item name="android:background">@drawable/background_night</item>
     </style>
 
     <!--  NAVIGATION  -->
     <style name="nav">
         <item name="android:gravity">center</item>
-        <item name="android:background">@color/blue_ed_text</item>
+        <item name="android:background">@color/green_reg</item>
         <item name="android:layout_height">60dp</item>
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
@@ -40,12 +45,12 @@
 
     <!-- TextView -->
     <style name="MainText">
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/green_auth</item>
         <item name="android:fontFamily">@font/qanelas</item>
     </style>
 
     <style name="RegistrationText">
-        <item name="android:textColor">@color/blue_reg</item>
+        <item name="android:textColor">@color/green_reg</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/qanelas</item>
     </style>
@@ -55,7 +60,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/white</item>
         <item name="android:fontFamily">@font/qanelas </item>
-        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:background">@drawable/edittext_background_night</item>
         <item name="android:backgroundTint">@null</item>
     </style>
 
@@ -69,7 +74,7 @@
 
     <!-- ACTION BAR -->
     <style name="actionBar">
-        <item name="android:background">@color/blue_reg</item>
+        <item name="android:background">@color/green_reg</item>
         <item name="titleTextColor">@color/white</item>
         <item name="titleTextAppearance">@style/titleStyle</item>
 

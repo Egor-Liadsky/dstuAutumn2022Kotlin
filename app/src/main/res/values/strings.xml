@@ -15,4 +15,6 @@
     <string name="change_theme">Сменить тему</string>
     <string name="night">Темная</string>
     <string name="settings">Настройки</string>
+    <string name="tasks">Задачи</string>
+    <string name="add_task">Добавление задачи</string>
 </resources>

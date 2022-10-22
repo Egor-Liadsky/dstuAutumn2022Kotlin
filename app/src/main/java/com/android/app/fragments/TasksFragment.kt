@@ -5,16 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.android.app.R
+import com.android.app.databinding.FragmentNotesBinding
+import com.android.app.databinding.FragmentTasksBinding
 
 
 class TasksFragment : Fragment() {
 
+    private lateinit var binding: FragmentTasksBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tasks, container, false)
+    ): View {
+        binding = FragmentTasksBinding.inflate(inflater, container, false)
+
+
+        binding.nextAddTaskButton.setOnClickListener {
+            findNavController().navigate(R.id.action_tasksFragment_to_addTaskFragment)
+        }
+
+        return binding.root
     }
 }

@@ -16,4 +16,7 @@ class EncryptedPreferencesStore(context: Context) {
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
 
+    fun saveUserId(id:Int) = sharedPreferences.edit().putInt("userId", id).apply()
+
+    fun getSavedId(): Int = sharedPreferences.getInt("userid", 0)
 }

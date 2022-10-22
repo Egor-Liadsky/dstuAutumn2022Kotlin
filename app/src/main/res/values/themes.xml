@@ -23,6 +23,11 @@
         <item name="android:fontFamily">@font/qanelas</item>
     </style>
 
+    <!-- ActivityMain -->
+    <style name="activityMain">
+        <item name="android:background">@drawable/background</item>
+    </style>
+
     <!--  NAVIGATION  -->
     <style name="nav">
         <item name="android:gravity">center</item>

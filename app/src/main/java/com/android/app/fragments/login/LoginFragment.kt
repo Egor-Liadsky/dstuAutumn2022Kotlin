@@ -26,7 +26,9 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.signInButton.setOnClickListener {
-//            if (viewModel.id!=0) == findNavController().navigate(TODO())
+            viewModel.login(binding.phoneEditText.text.toString(), binding.emailEditText.text.toString())
+            if (viewModel.id!=0){
+                TODO() }
         }
         binding.nextTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)

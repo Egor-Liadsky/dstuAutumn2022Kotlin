@@ -10,4 +10,8 @@
     <color name="blue">#91c6ed</color>
     <color name="blue_reg">#6ea3b1</color>
     <color name="blue_ed_text">#6EA2B0</color>
+
+    <color name="green_white">#7DB19B</color>
+    <color name="green_auth"> #a6edde</color>
+    <color name="green_reg"> #7db19b </color>
 </resources>

@@ -16,9 +16,14 @@ class TaskViewModel @Inject constructor(
 
     var taskList = kotlin.collections.ArrayList<AllTaskModelItem>()
 
-    fun getAllTasks() {
-        viewModelScope.launch(Dispatchers.IO) {
-            taskList = taskRepository.getAllTask()
+    suspend fun getAllTasks() {
+        viewModelScope.runCatching {
+                taskList = taskRepository.getAllTask()
         }
     }
+//    init {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            taskList = taskRepository.getAllTask()
+//        }
+//    }
 }

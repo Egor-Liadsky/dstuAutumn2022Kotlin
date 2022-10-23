@@ -17,6 +17,7 @@ import com.android.app.adapters.TaskAdapter
 import com.android.app.databinding.FragmentTasksBinding
 import com.android.app.models.*
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class TasksFragment : Fragment() {
@@ -38,7 +39,7 @@ class TasksFragment : Fragment() {
             TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej")
         )
 
-        viewModel.getAllTasks()
+        runBlocking { viewModel.getAllTasks() }
         Log.e("API", viewModel.taskList.toString())
 
         binding.rcView.layoutManager = LinearLayoutManager(requireContext())

@@ -2,6 +2,7 @@ package com.android.app.fragments.tasks
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.android.app.data.preferences.PreferencesStore
 import com.android.app.data.repository.TaskRepository
 import com.android.app.data.repository.UserRepository
 import com.android.app.models.UsersItem
@@ -13,7 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SelectUserTaskFragmentViewModel@Inject constructor(
     private val taskRep: TaskRepository,
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    val preferencesStore: PreferencesStore
 ) : ViewModel() {
 
     var toId = 0

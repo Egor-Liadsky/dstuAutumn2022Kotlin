@@ -33,11 +33,7 @@ class TasksFragment : Fragment() {
     ): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
 
-        val listData = listOf<TaskModel>(
-            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
-            TaskModel ("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
-            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej")
-        )
+
 
         runBlocking { viewModel.getAllTasks() }
         Log.e("API", viewModel.taskList.toString())
@@ -51,16 +47,52 @@ class TasksFragment : Fragment() {
             findNavController().navigate(R.id.action_tasksFragment_to_selectUserTaskFragment)
         }
 
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        for (i in viewModel.taskList){
-            adapter.addData(viewModel.taskList)
+        val listData = listOf<AllTaskModelItem>(
+            AllTaskModelItem(
+                3,
+                false,
+                24102022,
+                21102022,
+                6,
+                text = "Тестовое содержимое задачи",
+                time_start = "15:30",
+                time_end = "17:40",
+                title = "Первая задача",
+                to_id = 2
+            ),
+            AllTaskModelItem(
+                3,
+                false,
+                11122010,
+                21102022,
+                7,
+                text = "Тест",
+                time_start = "02:05",
+                time_end = "14:40",
+                title = "Вторая задача",
+                to_id = 1
+            ),
+            AllTaskModelItem(
+                3,
+                false,
+                11122010,
+                21102022,
+                8,
+                text = "Тестовые данные",
+                time_start = "13:25",
+                time_end = "19:00",
+                title = "Третья задача",
+                to_id = 2
+            )
+        )
+        for (i in listData) {
+            adapter.addData(listData)
         }
     }
-
-
 }

@@ -33,8 +33,10 @@ class NotesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val data = listOf(
-            Note("TEst", "first test", "10.12.2001"),
-            Note("TEst2", "second test", "10.12.2006")
+            Note("Первая заметка", "first test",),
+            Note("Вторая заметка", "second test",),
+            Note("Вторая заметка", "second test",)
+            Note("Вторая заметка", "second test",)
         )
 
         binding.floatingActionButton.setOnClickListener {

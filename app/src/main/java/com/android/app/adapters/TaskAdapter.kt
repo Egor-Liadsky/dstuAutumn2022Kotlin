@@ -18,8 +18,8 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskHolder>() {
             binding.contentTextView.text = item.text
             binding.startDateTextView.text = item.time_start
             binding.endDateTextView.text = item.time_end
-            binding.fromTextView.text = item.from_id.toString()
-            binding.whomTextView.text = item.to_id.toString()
+            binding.fromTextView.text = "От пользователя с ID ${item.from_id.toString()}"
+            binding.whomTextView.text = "Пользователю с ID ${item.to_id.toString()}"
         }
     }
 

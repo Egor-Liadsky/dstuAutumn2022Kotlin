@@ -39,7 +39,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:background="@drawable/edittext_background"
+        style="@style/blockSettings"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -57,10 +57,12 @@
             android:text="@string/change_theme" />
 
         <Button
+            style="@style/changeThemeButton"
             android:id="@+id/changeThemeButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
+            android:textSize="15sp"
             android:text="@string/night" />
 
     </LinearLayout>
@@ -72,7 +74,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:background="@drawable/edittext_background"
+        style="@style/blockSettings"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/blockView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -91,13 +93,17 @@
 
         <Switch
             android:id="@+id/pushSwitch"
+            style="@style/changeThemeButton"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
             android:layout_weight="1"
+            android:fontFamily="@font/qanelas"
             android:text="Включить"
+            android:textColor="@color/black"
+            android:textSize="15sp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 

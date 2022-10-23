@@ -37,7 +37,7 @@ class NotesFragment : Fragment() {
             Note("TEst2", "second test", "10.12.2006")
         )
 
-        binding.createNoteButton.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_notesFragment_to_addNoteFragment)
         }
 

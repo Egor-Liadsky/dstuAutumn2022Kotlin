@@ -96,5 +96,9 @@
         <item name="android:background">@drawable/border_button</item>
     </style>
 
+    <style name="fub">
+        <item name="android:backgroundTint">@color/blue_reg</item>
+    </style>
+
 </resources>
 

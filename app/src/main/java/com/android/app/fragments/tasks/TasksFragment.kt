@@ -47,7 +47,7 @@ class TasksFragment : Fragment() {
 
         runBlocking { viewModel.getAllTasks() }
 
-        binding.createTaskButton.setOnClickListener {
+        binding.floatingActionButtonTask.setOnClickListener {
             findNavController().navigate(R.id.action_tasksFragment_to_selectUserTaskFragment)
         }
 

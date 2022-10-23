@@ -12,9 +12,9 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteHolder>(){
 
     class NoteHolder(private val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: Note){
-            binding.title.text = item.title
-            binding.description.text = item.description
-            binding.date.text = item.date
+//            binding.title.text = item.title
+//            binding.description.text = item.description
+//            binding.date.text = item.date
         }
     }
 

@@ -1,6 +1,7 @@
 package com.android.app.fragments.tasks
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.app.R
 import com.android.app.adapters.TaskAdapter
 import com.android.app.databinding.FragmentTasksBinding
-import com.android.app.models.Task
-import com.android.app.models.TaskModel
-import com.android.app.models.UsersItem
+import com.android.app.models.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +24,7 @@ class TasksFragment : Fragment() {
     //    private val vModel: AddTaskViewModel by viewModels()
     private lateinit var binding: FragmentTasksBinding
     private var adapter = TaskAdapter()
+    private val viewModel: TaskViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,14 +38,19 @@ class TasksFragment : Fragment() {
             TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej")
         )
 
+        viewModel.getAllTasks()
+        Log.e("API", viewModel.taskList.toString())
+
         binding.rcView.layoutManager = LinearLayoutManager(requireContext())
         binding.rcView.adapter = adapter
 
-//        for (i in listData){
-//            adapter.addData(i)
-//        }
+        for (i in listData){
+            adapter.addData(viewModel.taskList)
+        }
 
-        adapter.addData(listData)
+//        adapter.addData(
+//
+//        )
 
 
         binding.createTaskButton.setOnClickListener {

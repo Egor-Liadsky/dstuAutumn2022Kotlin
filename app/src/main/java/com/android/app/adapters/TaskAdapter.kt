@@ -16,10 +16,10 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskHolder>() {
         fun bind(item: AllTaskModelItem){
             binding.titleTextView.text = item.title
             binding.contentTextView.text = item.text
-            binding.startDateTextView.text = item.time_start
-            binding.endDateTextView.text = item.time_end
-            binding.fromTextView.text = item.from_id.toString()
-            binding.whomTextView.text = item.to_id.toString()
+            binding.startDateTextView.text = "Дата начала: ${item.time_start}"
+            binding.endDateTextView.text = "Дата окончания: ${item.time_end}"
+            binding.fromTextView.text = "От кого: ${item.from_id.toString()}"
+            binding.whomTextView.text = "Кому: ${item.to_id.toString()}"
         }
     }
 

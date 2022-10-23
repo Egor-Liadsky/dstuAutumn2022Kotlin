@@ -2,16 +2,13 @@ package com.android.app.fragments
 
 import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.android.app.Constants
-import com.android.app.R
-import com.android.app.data.preferences.PreferencesStore
-import com.android.app.databinding.FragmentAddNoteBinding
 import com.android.app.databinding.FragmentSettingsBinding
 import com.android.app.fragments.tasks.SelectUserTaskFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint

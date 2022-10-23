@@ -7,6 +7,7 @@ import com.android.app.data.repository.UserRepository
 import com.android.app.models.UsersItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -36,6 +37,7 @@ class AddTaskViewModel @Inject constructor(
             startDate,
             endDate
         )
+        viewModelScope.cancel()
     }
 
     fun getAllUsers() = viewModelScope.launch(Dispatchers.IO) {

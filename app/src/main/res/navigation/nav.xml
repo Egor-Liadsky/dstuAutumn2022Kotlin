@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.android.app.fragments.NotesFragment"
+        android:name="com.android.app.fragments.notes.NotesFragment"
         android:label="Заметки"
         tools:layout="@layout/fragment_notes" >
         <action
@@ -84,7 +84,11 @@
         android:id="@+id/addTaskFragment"
         android:name="com.android.app.fragments.tasks.AddTaskFragment"
         android:label="Добавить задачу"
-        tools:layout="@layout/fragment_add_task" />
+        tools:layout="@layout/fragment_add_task" >
+        <action
+            android:id="@+id/action_addTaskFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
     <fragment
         android:id="@+id/selectUserTaskFragment"
         android:name="com.android.app.fragments.tasks.SelectUserTaskFragment"

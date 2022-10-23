@@ -48,7 +48,6 @@ class TasksFragment : Fragment() {
         adapter.addData(listData)
 
 
-
         binding.createTaskButton.setOnClickListener {
             findNavController().navigate(R.id.action_tasksFragment_to_selectUserTaskFragment)
         }

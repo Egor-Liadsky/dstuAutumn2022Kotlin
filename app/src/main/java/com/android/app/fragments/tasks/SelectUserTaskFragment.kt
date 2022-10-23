@@ -37,7 +37,10 @@ class SelectUserTaskFragment : Fragment() {
 
 
         binding.nextAddTaskButton.setOnClickListener {
-
+            findNavController().navigate(
+                R.id.action_selectUserTaskFragment_to_addTaskFragment,
+                bundleOf("asd" to binding.popupButton.text)
+            )
         }
 
 
@@ -52,7 +55,7 @@ class SelectUserTaskFragment : Fragment() {
             for (i in listUser) {
                 a = i.public_name
                 add(a).setOnMenuItemClickListener {
-                    binding.popupButton.text = a
+                    binding.popupButton.text = i.public_name
                     viewModel.toId = i.user_id
                     true
                 }

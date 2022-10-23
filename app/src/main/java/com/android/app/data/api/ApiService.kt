@@ -2,6 +2,7 @@ package com.android.app.data.api
 
 import com.android.app.models.AllTaskModel
 import com.android.app.models.AllTaskModelItem
+import com.android.app.models.Note
 import com.android.app.models.UsersItem
 import retrofit2.http.*
 
@@ -30,6 +31,9 @@ interface ApiService {
         @Query("time_start") startDate: String,
         @Query("time_end") endDate: String
     )
+
+    @GET("select_note?from_id=12")
+    suspend fun getNote(): ArrayList<Note>
 
     @GET("select_all_users")
     suspend fun getAllUsers(): ArrayList<UsersItem>

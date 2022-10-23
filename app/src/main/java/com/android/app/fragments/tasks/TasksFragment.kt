@@ -35,7 +35,7 @@ class TasksFragment : Fragment() {
 
 
 
-        runBlocking { viewModel.getAllTasks() }
+        viewModel.getAllTasks()
         Log.e("API", viewModel.taskList.toString())
 
         binding.rcView.layoutManager = LinearLayoutManager(requireContext())

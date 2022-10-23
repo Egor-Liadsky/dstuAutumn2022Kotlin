@@ -44,7 +44,7 @@ class NotesFragment : Fragment() {
             findNavController().navigate(R.id.action_notesFragment_to_addNoteFragment)
         }
 //        viewModel.getNotes()
-        Log.e("API", viewModel.noteList.toString())
+//        Log.e("API", viewModel.noteList.toString())
 //        data.forEach {
 //            adapter.addData(it.title, it.description, it.date)
 //        }

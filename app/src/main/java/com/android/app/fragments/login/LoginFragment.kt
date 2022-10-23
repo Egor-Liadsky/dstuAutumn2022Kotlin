@@ -35,10 +35,8 @@ class LoginFragment : Fragment() {
         binding.signInButton.setOnClickListener {
             if (binding.phoneEditText.text.isNotEmpty() || binding.emailEditText.text.isNotEmpty()){
                 viewModel.login(phone = phone, email = email)
-                viewModel.getUserid()
-//                    Toast.makeText(context, viewModel.id.toString(), Toast.LENGTH_LONG).show()
-                /*if (viewModel.id!=0)*/ findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
-
+                    Toast.makeText(context, viewModel.id.toString(), Toast.LENGTH_LONG).show()
+                if (viewModel.id!=0) findNavController().navigate(R.id.action_loginFragment_to_tasksFragment)
             } else {
                 Snackbar.make(
                     binding.loginFragment, "Некоректные данные", Snackbar.LENGTH_SHORT

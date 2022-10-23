@@ -15,12 +15,12 @@ class UserRepository @Inject constructor(
         email: String,
         name: String,
         phone: String
-    ) = runCatching { setUserId(api.register(email, phone, name)) }
+    ) = runCatching { setUserId(api.register(email, phone, name).userId) }
 
     suspend fun login(
         email: String,
         phone: String
-    ) = runCatching { setUserId(api.login(email, phone)) }
+    ):Int = api.login(email, phone).userId
 
     suspend fun allUsers(): ArrayList<UsersItem> {
         return api.getAllUsers()

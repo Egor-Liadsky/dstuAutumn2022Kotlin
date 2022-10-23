@@ -2,6 +2,7 @@ package com.android.app.data.api
 
 import com.android.app.models.AllTaskModelItem
 import com.android.app.models.Note
+import com.android.app.models.UserId
 import com.android.app.models.UsersItem
 import retrofit2.http.*
 
@@ -12,13 +13,13 @@ interface ApiService {
         @Query("email") email: String,
         @Query("name") name: String,
         @Query("phone") phone: String
-    ): Int
+    ): UserId
 
     @GET("login")
     suspend fun login(
         @Query("email") email: String,
         @Query("phone") phone: String
-    ): Int
+    ): UserId
 
     @POST("create_task")
     suspend fun addTask(
@@ -31,7 +32,7 @@ interface ApiService {
         @Query("time_end") endDate: String
     )
 
-    @GET("select_note?from_id=12")
+    @GET("select_note?from_id=23")
     suspend fun getNote(): ArrayList<Note>
 
     @GET("select_all_users")

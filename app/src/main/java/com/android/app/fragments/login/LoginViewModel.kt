@@ -17,15 +17,6 @@ class LoginViewModel @Inject constructor(private val repository: UserRepository)
         email: String,
         phone: String
     ) = viewModelScope.launch(Dispatchers.IO) {
-        repository.login(email, phone)
-        id = repository.getUserId()
-    }
-
-    init {
-        id = repository.getUserId()
-    }
-
-    fun getUserid() {
-        id = repository.getUserId()
+        id = repository.login(email, phone)
     }
 }

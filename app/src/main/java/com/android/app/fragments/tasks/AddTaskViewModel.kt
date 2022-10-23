@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.app.data.repository.TaskRepository
 import com.android.app.data.repository.UserRepository
+import com.android.app.models.TaskModel
 import com.android.app.models.UsersItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ class AddTaskViewModel @Inject constructor(
 ) : ViewModel() {
 
     var toId = 0
-    var listUsers = ArrayList<UsersItem>()
+    var listUsers = emptyList<TaskModel>()
 
     fun addTask(
         toId: Int?,
@@ -38,7 +39,9 @@ class AddTaskViewModel @Inject constructor(
         )
     }
 
-    fun getAllUsers() = viewModelScope.launch(Dispatchers.IO) {
-        listUsers = userRepository.allUsers()
+    fun addTaskDB(task: TaskModel) = viewModelScope.launch(Dispatchers.IO) { taskRep.insertTasks(task) }
+
+    fun getAllUsersDB() = viewModelScope.launch(Dispatchers.IO) {
+        listUsers = taskRep.getAllTask()
     }
 }

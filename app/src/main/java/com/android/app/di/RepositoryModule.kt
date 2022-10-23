@@ -1,6 +1,7 @@
 package com.android.app.di
 
 import com.android.app.data.api.ApiService
+import com.android.app.data.local.dao.TasksDao
 import com.android.app.data.preferences.EncryptedPreferencesStore
 import com.android.app.data.repository.TaskRepository
 import com.android.app.data.repository.UserRepository
@@ -16,9 +17,13 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideTaskRepository(apiService: ApiService): TaskRepository = TaskRepository(apiService)
+    fun provideTaskRepository(apiService: ApiService, tasksDao: TasksDao): TaskRepository =
+        TaskRepository(apiService, tasksDao)
 
     @Provides
     @Singleton
-    fun provideUserRepository(apiService: ApiService, encryptedPreferences: EncryptedPreferencesStore): UserRepository = UserRepository(apiService, encryptedPreferences)
+    fun provideUserRepository(
+        apiService: ApiService,
+        encryptedPreferences: EncryptedPreferencesStore
+    ): UserRepository = UserRepository(apiService, encryptedPreferences)
 }

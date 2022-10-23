@@ -9,8 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentAddTaskBinding
+import com.android.app.models.TaskModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class AddTaskFragment : Fragment() {
@@ -32,13 +34,15 @@ class AddTaskFragment : Fragment() {
 
         binding.signInButton.setOnClickListener {
             if (title.isNotEmpty() || content.isNotEmpty() || startTime.isNotEmpty() || endTime.isNotEmpty()) {
-                viewModel.addTask(
-                    arguments?.getInt("toId"),
-                    binding.titlePlainText.text.toString(),
-                    binding.contentPlainText.text.toString(),
-                    binding.checkBox.isChecked,
-                    binding.startTimePlainText.text.toString(),
-                    binding.endTimePlainText.text.toString()
+                viewModel.addTaskDB(
+                    TaskModel(
+                        id = Random().nextInt( 999999),
+                        title = binding.titlePlainText.text.toString(),
+                        description = binding.contentPlainText.text.toString(),
+                        isHidden = binding.checkBox.isChecked,
+                        startDate = binding.startTimePlainText.text.toString(),
+                        endDate = binding.endTimePlainText.toString()
+                    )
                 )
                 findNavController().navigate(R.id.action_addTaskFragment_to_tasksFragment)
             } else {

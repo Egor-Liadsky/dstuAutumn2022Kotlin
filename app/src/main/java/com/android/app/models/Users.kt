@@ -1,3 +1,8 @@
 package com.android.app.models
 
-class Users : ArrayList<UsersItem>()
+import androidx.room.Entity
+
+@Entity
+data class Users(
+    val taskList: ArrayList<UsersItem>
+)

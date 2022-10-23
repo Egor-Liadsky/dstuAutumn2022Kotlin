@@ -1,10 +1,10 @@
-package com.android.app.fragments
+package com.android.app.fragments.notes
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.android.app.adapters.NoteAdapter
 import com.android.app.databinding.FragmentNotesBinding
 import com.android.app.models.Note
@@ -20,9 +20,7 @@ class NotesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
-
-        binding = FragmentNotesBinding.inflate(inflater, container, false)
+        binding = com.android.app.databinding.FragmentNotesBinding.inflate(inflater, container, false)
 
 
 

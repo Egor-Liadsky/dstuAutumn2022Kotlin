@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.android.app.R
 import com.android.app.databinding.FragmentAddTaskBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +20,7 @@ class AddTaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAddTaskBinding.inflate(inflater, container, false)
 
         binding.signInButton.setOnClickListener {
@@ -30,6 +32,7 @@ class AddTaskFragment : Fragment() {
                 binding.startTimePlainText.text.toString(),
                 binding.endTimePlainText.text.toString()
             )
+            findNavController().navigate(R.id.action_addTaskFragment_to_tasksFragment)
         }
 
         return binding.root

@@ -1,6 +1,7 @@
 package com.android.app.data.repository
 
 import com.android.app.data.api.ApiService
+import com.android.app.models.AllTaskModelItem
 import javax.inject.Inject
 
 class TaskRepository @Inject constructor(private val api: ApiService) {
@@ -24,4 +25,6 @@ class TaskRepository @Inject constructor(private val api: ApiService) {
             endDate
         )
     }
+
+    suspend fun getAllTask(): ArrayList<AllTaskModelItem> = api.selectAllTasks()
 }

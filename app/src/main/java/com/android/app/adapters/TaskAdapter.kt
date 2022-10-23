@@ -4,20 +4,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.app.databinding.ItemTaskBinding
+import com.android.app.models.AllTaskModelItem
 import com.android.app.models.TaskModel
 
 class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskHolder>() {
 
-    private var taskList = mutableListOf<TaskModel>()
+    private var taskList =
+        kotlin.collections.ArrayList<AllTaskModelItem>()
 
     class TaskHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item: TaskModel){
+        fun bind(item: AllTaskModelItem){
             binding.titleTextView.text = item.title
-            binding.contentTextView.text = item.description
-            binding.startDateTextView.text = item.startDate
-            binding.endDateTextView.text = item.endDate
-            binding.fromTextView.text = item.from
-            binding.whomTextView.text = item.whom
+            binding.contentTextView.text = item.text
+            binding.startDateTextView.text = item.time_start
+            binding.endDateTextView.text = item.time_end
+            binding.fromTextView.text = item.from_id.toString()
+            binding.whomTextView.text = item.to_id.toString()
         }
     }
 
@@ -34,7 +36,8 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskHolder>() {
         return taskList.size
     }
 
-    fun addData(list: List<TaskModel>){
+    fun addData(list: List<AllTaskModelItem>){
+        taskList.clear()
         taskList.addAll(list)
         notifyDataSetChanged()
     }

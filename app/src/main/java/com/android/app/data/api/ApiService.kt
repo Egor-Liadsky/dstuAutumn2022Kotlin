@@ -1,5 +1,7 @@
 package com.android.app.data.api
 
+import com.android.app.models.AllTaskModel
+import com.android.app.models.AllTaskModelItem
 import com.android.app.models.UsersItem
 import retrofit2.http.*
 
@@ -31,4 +33,7 @@ interface ApiService {
 
     @GET("select_all_users")
     suspend fun getAllUsers(): ArrayList<UsersItem>
+
+    @GET("select_all_task")
+    suspend fun selectAllTasks(): ArrayList<AllTaskModelItem>
 }

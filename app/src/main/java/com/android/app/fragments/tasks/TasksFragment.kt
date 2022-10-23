@@ -33,6 +33,15 @@ class TasksFragment : Fragment() {
     ): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
 
+        val listData = listOf<TaskModel>(
+            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
+            TaskModel ("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
+            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej")
+        )
+
+        runBlocking { viewModel.getAllTasks() }
+        Log.e("API", viewModel.taskList.toString())
+
         binding.rcView.layoutManager = LinearLayoutManager(requireContext())
         binding.rcView.adapter = adapter
 

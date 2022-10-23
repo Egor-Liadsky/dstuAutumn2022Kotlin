@@ -24,17 +24,16 @@ class SelectUserTaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSelectUserTaskBinding.inflate(inflater, container, false)
-        val listName = listOf("ewg", "akjshd", "1i23u")
+
+        viewModel.getAllUsers()
 
         binding.popupButton.setOnClickListener {
-            viewModel.getAllUsers()
             showPopupMenu(
                 binding.popupButton, viewModel.listUsers
             )
         }
-
 
         binding.nextAddTaskButton.setOnClickListener {
             findNavController().navigate(
@@ -42,14 +41,11 @@ class SelectUserTaskFragment : Fragment() {
                 bundleOf("asd" to binding.popupButton.text)
             )
         }
-
-
         return binding.root
     }
 
     private fun showPopupMenu(view: View, listUser: ArrayList<UsersItem>) {
         var a = ""
-        val b = 1
         val popup = PopupMenu(view.context, view)
         popup.menu.apply {
             for (i in listUser) {

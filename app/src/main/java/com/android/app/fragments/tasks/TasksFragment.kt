@@ -17,6 +17,7 @@ import com.android.app.adapters.TaskAdapter
 import com.android.app.databinding.FragmentTasksBinding
 import com.android.app.models.*
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class TasksFragment : Fragment() {
@@ -32,32 +33,24 @@ class TasksFragment : Fragment() {
     ): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
 
-        val listData = listOf<TaskModel>(
-            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
-            TaskModel ("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej"),
-            TaskModel("wd", "qwkej", ";kasjdf", "dkasjdqw", "klfjsd", "qwkej")
-        )
-
-        viewModel.getAllTasks()
-        Log.e("API", viewModel.taskList.toString())
-
         binding.rcView.layoutManager = LinearLayoutManager(requireContext())
         binding.rcView.adapter = adapter
 
-        for (i in listData){
-            adapter.addData(viewModel.taskList)
-        }
-
-//        adapter.addData(
-//
-//        )
-
+        runBlocking { viewModel.getAllTasks() }
 
         binding.createTaskButton.setOnClickListener {
             findNavController().navigate(R.id.action_tasksFragment_to_selectUserTaskFragment)
         }
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        for (i in viewModel.taskList){
+            adapter.addData(viewModel.taskList)
+        }
     }
 
 

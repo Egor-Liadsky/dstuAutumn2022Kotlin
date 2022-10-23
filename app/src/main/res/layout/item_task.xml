@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="10dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="20dp"
+    android:alpha="0.85"
     android:layout_marginTop="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginStart="20dp"
@@ -22,6 +23,7 @@
             android:layout_marginTop="10dp"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/titleTextView"
                 style="@style/MainText"
@@ -29,20 +31,23 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="35sp"
+                android:layout_marginTop="10dp"
                 tools:text="Название задачи" />
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/contentTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 tools:text="Плыли мы по морю ветер мачту рвал.
 Капитан Залупа с корабля сбежал.
 Я стоял на вахте и держал весло.
 Чем-то уебало и меня снесло." />
 
             <TextView
+                android:layout_marginTop="20dp"
                 android:id="@+id/fromTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,6 +62,7 @@
                 tools:text="Кому:" />
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/startDateTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

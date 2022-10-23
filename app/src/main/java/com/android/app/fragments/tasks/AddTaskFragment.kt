@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.app.R
 import com.android.app.databinding.FragmentAddTaskBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,16 +24,28 @@ class AddTaskFragment : Fragment() {
     ): View {
         binding = FragmentAddTaskBinding.inflate(inflater, container, false)
 
+        val title = binding.titlePlainText.text
+        val content = binding.contentPlainText.text
+        val startTime = binding.startTimePlainText.text
+        val endTime = binding.endTimePlainText.text
+
+
         binding.signInButton.setOnClickListener {
-            viewModel.addTask(
-                arguments?.getInt("toId"),
-                binding.titlePlainText.text.toString(),
-                binding.contentPlainText.text.toString(),
-                binding.checkBox.isChecked,
-                binding.startTimePlainText.text.toString(),
-                binding.endTimePlainText.text.toString()
-            )
-            findNavController().navigate(R.id.action_addTaskFragment_to_tasksFragment)
+            if (title.isNotEmpty() || content.isNotEmpty() || startTime.isNotEmpty() || endTime.isNotEmpty()) {
+                viewModel.addTask(
+                    arguments?.getInt("toId"),
+                    binding.titlePlainText.text.toString(),
+                    binding.contentPlainText.text.toString(),
+                    binding.checkBox.isChecked,
+                    binding.startTimePlainText.text.toString(),
+                    binding.endTimePlainText.text.toString()
+                )
+                findNavController().navigate(R.id.action_addTaskFragment_to_tasksFragment)
+            } else {
+                Snackbar.make(
+                    binding.addTaskFragment, "Некоректные данные", Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
 
         return binding.root

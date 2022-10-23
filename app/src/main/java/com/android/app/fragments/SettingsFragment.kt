@@ -27,7 +27,7 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
-
+        binding.changeThemeButton.text = Constants.THEME
         binding.changeThemeButton.setOnClickListener {
 //            if (Constants.THEME == "light"){
 //                binding.changeThemeButton.text = "ТЕМНАЯ"
@@ -37,14 +37,12 @@ class SettingsFragment : Fragment() {
 //            }
             when(resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
                 Configuration.UI_MODE_NIGHT_YES -> {
-                    Constants.THEME = "ТЕМНАЯ"
-                    binding.changeThemeButton.text = Constants.THEME
+                    Constants.THEME = "ЗЕЛЕНАЯ"
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     viewModel.preferencesStore.saveTheme(true)
                 }
                 Configuration.UI_MODE_NIGHT_NO -> {
-                    Constants.THEME = "СВЕТЛАЯ"
-                    binding.changeThemeButton.text = Constants.THEME
+                    Constants.THEME = "СИНЯЯ"
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     viewModel.preferencesStore.saveTheme(false)
                 }

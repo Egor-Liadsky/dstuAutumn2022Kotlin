@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/tasksFragment"
-        android:icon="@drawable/ic_tasks_foreground"
+        android:icon="@drawable/ic_tasks"
         android:title="Задачи" />
     <item
         android:id="@+id/notesFragment"
-        android:icon="@drawable/ic_noteslist_foreground"
+        android:icon="@drawable/ic_note"
         android:title="Заметки" />
 
     <item
         android:id="@+id/hotListFragment"
-        android:icon="@drawable/ic_hotlist_foreground"
+        android:icon="@drawable/ic_fire"
         android:title="Горячий список" />
 
     <item
         android:id="@+id/hiddenTasksFragment"
-        android:icon="@drawable/ic_tasks_foreground"
+        android:icon="@drawable/ic_hidden"
         android:title="Скрытые задачи" />
 
     <item

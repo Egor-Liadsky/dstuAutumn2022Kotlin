@@ -35,8 +35,8 @@
         android:label="Задачи"
         tools:layout="@layout/fragment_tasks" >
         <action
-            android:id="@+id/action_tasksFragment_to_addTaskFragment"
-            app:destination="@id/addTaskFragment" />
+            android:id="@+id/action_tasksFragment_to_selectUserTaskFragment"
+            app:destination="@id/selectUserTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/notesFragment"
@@ -85,4 +85,13 @@
         android:name="com.android.app.fragments.tasks.AddTaskFragment"
         android:label="Добавить задачу"
         tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/selectUserTaskFragment"
+        android:name="com.android.app.fragments.tasks.SelectUserTaskFragment"
+        android:label="fragment_select_user_task"
+        tools:layout="@layout/fragment_select_user_task" >
+        <action
+            android:id="@+id/action_selectUserTaskFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
 </navigation>
